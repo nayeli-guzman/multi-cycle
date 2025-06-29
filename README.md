@@ -9,6 +9,19 @@
 
 ---
 
+## ▶️ How to Use
+
+1. Clone this repo:
+
+```bash
+git clone https://github.com/nayeli-guzman/multi-cycle.git
+cd multi-cycle
+```
+
+Open the archive multicycle.xpr
+
+---
+
 ## 📚 Overview
 
 This project extends a multicycle ARM-based processor with:
@@ -69,10 +82,6 @@ This project extends a multicycle ARM-based processor with:
 - ✅ Assembly programs demonstrating usage of new operations.
 - ✅ Testbenches for ALU and FPU.
 - ✅ Written report (`report/report.pdf`).
-- ✅ Oral presentation and Q&A.
-
-Refer to `rubrica.docx` for grading criteria and submission deadlines.
-
 ---
 
 ## 📝 Notes
