@@ -51,8 +51,17 @@ module datapath (
   wire [3:0] RA1;
   wire [3:0] RA2;
   wire [3:0] A3;
+  
+  // ALTERNATIVOS EN CASO DE MUL
+  wire [3:0] RA1_;
+  wire [3:0] RA2_;
+  
+  
+  assign RA2_ = (Instr[7:4] == 4'b1001) ? Instr[11:8]  : Instr[3:0];
+  assign RA1_ = (Instr[7:4] == 4'b1001) ? Instr[3:0]   : Instr[19:16];
+  assign A3   = (Instr[7:4] == 4'b1001) ? Instr[19:16] : Instr[15:12];
+  
 
-  // Datapath Hardware Submodules
   flopenr #(32) pcreg(
     .clk(clk),
     .reset(reset),
@@ -83,27 +92,19 @@ module datapath (
     .q(Data)
   );
 
-  wire [3:0] mRA1;
-  assign mRA1 = (Instr[7:4] == 4'b1001) ? Instr[3:0] : Instr[19:16];
-
   mux2 #(4) ra1mux(
-    .d0(mRA1),
+    .d0(RA1_),
     .d1(4'd15),
     .s(RegSrc[0]),
     .y(RA1)
   );
 
-  wire [3:0] mRA2;
-  assign mRA2 = (Instr[7:4] == 4'b1001) ? Instr[11:8] : Instr[3:0];
-
   mux2 #(4) ra2mux(
-    .d0(mRA2),
+    .d0(RA2_),
     .d1(Instr[15:12]),
     .s(RegSrc[1]),
     .y(RA2)
   );
-
-  assign A3 = (Instr[7:4] == 4'b1001) ? Instr[19:16] : Instr[15:12];
 
   extend e(
     .Instr(Instr[23:0]),

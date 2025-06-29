@@ -1,16 +1,16 @@
 module alu (
   input [31:0] a, b,
   input [2:0] ALUControl,
-  output reg [31:0] Result, Long,
+  output reg [31:0] Result,
   output wire [3:0] ALUFlags
 );
 
 wire neg, zero, carry, overflow;
 wire [31:0] condinvb;
-wire [32:0] sum; // suma 33 bits, carry bit 33
+wire [32:0] sum; 
 
-assign condinvb = ALUControl[0] ? ~b : b; // mux
-assign sum = a + condinvb + ALUControl[0]; // a + b + cin
+assign condinvb = ALUControl[0] ? ~b : b; 
+assign sum = a + condinvb + ALUControl[0];
 
 always @(*) begin
   casex (ALUControl)
