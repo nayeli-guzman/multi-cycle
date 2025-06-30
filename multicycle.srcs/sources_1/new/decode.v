@@ -17,7 +17,8 @@ module decode (
   ImmSrc,
   RegSrc,
   ALUControl,
-  MUL
+  MUL,
+  isMul
 );
   input wire clk;
   input wire reset;
@@ -39,6 +40,7 @@ module decode (
   output wire [1:0] ImmSrc;
   output wire [1:0] RegSrc;
   output reg [2:0] ALUControl;
+  output wire []
   wire Branch;
   wire ALUOp;
 
