@@ -61,7 +61,7 @@ module datapath (
   assign RA1_ = (Instr[7:4] == 4'b1001) ? Instr[3:0]   : Instr[19:16];
   assign A3   = (Instr[7:4] == 4'b1001) ? Instr[19:16] : Instr[15:12];
   
-
+  // guardar PC
   flopenr #(32) pcreg(
     .clk(clk),
     .reset(reset),
@@ -69,14 +69,16 @@ module datapath (
     .d(PCNext),
     .q(PC)
   );
-
+  
+  //  elegir entre PC O RESULT
   mux2 #(32) adrmux(
     .d0(PC),
-    .d1(PCNext),
+    .d1(Result),
     .s(AdrSrc),
     .y(Adr)
   );
 
+  // guardar el valor de read data como isntrucción
   flopenr #(32) instrreg(
     .clk(clk),
     .reset(reset),
@@ -84,34 +86,39 @@ module datapath (
     .d(ReadData),
     .q(Instr)
   );
-
+  
+  // guardar el valor de readdata como Data
   flopr #(32) datareg(
     .clk(clk),
     .reset(reset),
     .d(ReadData),
     .q(Data)
   );
-
+  
+  // elegir entre el reg15 o Rn
   mux2 #(4) ra1mux(
     .d0(RA1_),
     .d1(4'd15),
     .s(RegSrc[0]),
     .y(RA1)
   );
-
+    
+  // elegir entre Rm o Rd
   mux2 #(4) ra2mux(
     .d0(RA2_),
     .d1(Instr[15:12]),
     .s(RegSrc[1]),
     .y(RA2)
   );
-
+  
+  // extender el imm segun sea el caso
   extend e(
     .Instr(Instr[23:0]),
     .ImmSrc(ImmSrc),
     .ExtImm(ExtImm)
   );
-
+  
+  // configuración del register file
   regfile rf(
     .clk(clk),
     .we3(RegWrite),
@@ -123,7 +130,8 @@ module datapath (
     .rd1(RD1),
     .rd2(RD2)
   );
-
+    
+  // almacenar los valores de RD1 Y RD2
   flopr #(64) rdreg(
     .clk(clk),
     .reset(reset),
@@ -131,13 +139,15 @@ module datapath (
     .q({A, WriteData})
   );
 
+  // elegir si sumar el pc o Rn
   mux2 #(32) srcamux(
     .d0(A),
     .d1(PC),
     .s(ALUSrcA[0]),
     .y(SrcA)
   );
-
+    
+  // elegir el sumando B del ALU   
   mux3 #(32) srcbmux(
     .d0(WriteData),
     .d1(ExtImm),
@@ -145,7 +155,8 @@ module datapath (
     .s(ALUSrcB),
     .y(SrcB)
   );
-
+    
+  //
   alu a(
     .a(SrcA),
     .b(SrcB),
