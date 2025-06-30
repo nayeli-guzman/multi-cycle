@@ -50,6 +50,8 @@ module datapath (
   wire [31:0] RD2;
   wire [31:0] A;
   wire [31:0] ALUResult;
+  wire [31:0] ALUMulti;
+  
   wire [31:0] ALUOut;
   wire [3:0] RA1;
   wire [3:0] RA2;
@@ -60,7 +62,6 @@ module datapath (
   wire [3:0] RA2_;
   
     // se agregaron 3 mux para llamar a los valores correctos en caso se auna multiplicacion Rd, Rn, y Rm 
-  
 
   flopenr #(32) pcreg(
     .clk(clk),
@@ -144,7 +145,11 @@ module datapath (
     .wd3(Result),
     .r15(Result),
     .rd1(RD1),
-    .rd2(RD2)
+    .rd2(RD2),
+    .a4(Instr[15:12]),
+    .wd4(ALUMulti),
+    .IsMul(IsMul),
+    .Instr(Instr[23:21])
   );
 
   flopr #(64) rdreg(
@@ -174,7 +179,8 @@ module datapath (
     .b(SrcB),
     .ALUControl(ALUControl),
     .Result(ALUResult),
-    .ALUFlags(ALUFlags)
+    .ALUFlags(ALUFlags),
+    .ALUMulti(ALUMulti)
   );
 
   flopr #(32) alureg(

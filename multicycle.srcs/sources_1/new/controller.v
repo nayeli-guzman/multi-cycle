@@ -46,7 +46,7 @@ module controller (
     .Op(Instr[27:26]),
     .Funct(Instr[25:20]),
     .Rd(Instr[15:12]),
-    .MUL(Instr[7:4]), // MUL no es DP, con [7:4] se sabe si es MUL
+    .Instr(Instr[31:4]), // MUL no es DP, con [7:4] se sabe si es MUL
     .FlagW(FlagW),
     .PCS(PCS),
     .NextPC(NextPC),

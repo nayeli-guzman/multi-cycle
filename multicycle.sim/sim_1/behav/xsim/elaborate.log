@@ -7,66 +7,6 @@ Starting static elaboration
 Pass Through NonSizing Optimizer
 Completed static elaboration
 Starting simulation data flow analysis
-WARNING: [XSIM 43-4099] "C:/Users/nayel/Desktop/arch/multicycle/multicycle.srcs/sources_1/new/top.v" Line 1. Module top doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/nayel/Desktop/arch/multicycle/multicycle.srcs/sources_1/new/arm.v" Line 1. Module arm doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/nayel/Desktop/arch/multicycle/multicycle.srcs/sources_1/new/controller.v" Line 1. Module controller doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/nayel/Desktop/arch/multicycle/multicycle.srcs/sources_1/new/decode.v" Line 1. Module decode doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/nayel/Desktop/arch/multicycle/multicycle.srcs/sources_1/new/mainfsm.v" Line 1. Module mainfsm doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/nayel/Desktop/arch/multicycle/multicycle.srcs/sources_1/new/condlogic.v" Line 1. Module condlogic doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/nayel/Desktop/arch/multicycle/multicycle.srcs/sources_1/new/flopr.v" Line 1. Module flopr(WIDTH=2) doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/nayel/Desktop/arch/multicycle/multicycle.srcs/sources_1/new/condcheck.v" Line 1. Module condcheck doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/nayel/Desktop/arch/multicycle/multicycle.srcs/sources_1/new/flopr.v" Line 1. Module flopr(WIDTH=1) doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/nayel/Desktop/arch/multicycle/multicycle.srcs/sources_1/new/flopenr.v" Line 1. Module flopenr(WIDTH=2) doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/nayel/Desktop/arch/multicycle/multicycle.srcs/sources_1/new/flopenr.v" Line 1. Module flopenr(WIDTH=2) doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/nayel/Desktop/arch/multicycle/multicycle.srcs/sources_1/new/datapath.v" Line 1. Module datapath doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/nayel/Desktop/arch/multicycle/multicycle.srcs/sources_1/new/flopenr.v" Line 1. Module flopenr(WIDTH=32) doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/nayel/Desktop/arch/multicycle/multicycle.srcs/sources_1/new/mux2.v" Line 1. Module mux2(WIDTH=32) doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/nayel/Desktop/arch/multicycle/multicycle.srcs/sources_1/new/flopenr.v" Line 1. Module flopenr(WIDTH=32) doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/nayel/Desktop/arch/multicycle/multicycle.srcs/sources_1/new/flopr.v" Line 1. Module flopr(WIDTH=32) doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/nayel/Desktop/arch/multicycle/multicycle.srcs/sources_1/new/mux2.v" Line 1. Module mux2(WIDTH=4) doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/nayel/Desktop/arch/multicycle/multicycle.srcs/sources_1/new/mux2.v" Line 1. Module mux2(WIDTH=4) doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/nayel/Desktop/arch/multicycle/multicycle.srcs/sources_1/new/mux2.v" Line 1. Module mux2(WIDTH=4) doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/nayel/Desktop/arch/multicycle/multicycle.srcs/sources_1/new/mux2.v" Line 1. Module mux2(WIDTH=4) doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/nayel/Desktop/arch/multicycle/multicycle.srcs/sources_1/new/mux2.v" Line 1. Module mux2(WIDTH=4) doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/nayel/Desktop/arch/multicycle/multicycle.srcs/sources_1/new/extend.v" Line 1. Module extend doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/nayel/Desktop/arch/multicycle/multicycle.srcs/sources_1/new/regfile.v" Line 1. Module regfile doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/nayel/Desktop/arch/multicycle/multicycle.srcs/sources_1/new/flopr.v" Line 1. Module flopr(WIDTH=64) doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/nayel/Desktop/arch/multicycle/multicycle.srcs/sources_1/new/mux2.v" Line 1. Module mux2(WIDTH=32) doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/nayel/Desktop/arch/multicycle/multicycle.srcs/sources_1/new/mux3.v" Line 1. Module mux3(WIDTH=32) doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/nayel/Desktop/arch/multicycle/multicycle.srcs/sources_1/new/alu.v" Line 1. Module alu doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/nayel/Desktop/arch/multicycle/multicycle.srcs/sources_1/new/flopr.v" Line 1. Module flopr(WIDTH=32) doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/nayel/Desktop/arch/multicycle/multicycle.srcs/sources_1/new/mux3.v" Line 1. Module mux3(WIDTH=32) doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/nayel/Desktop/arch/multicycle/multicycle.srcs/sources_1/new/mem.v" Line 1. Module mem doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/nayel/Desktop/arch/multicycle/multicycle.srcs/sources_1/new/top.v" Line 1. Module top doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/nayel/Desktop/arch/multicycle/multicycle.srcs/sources_1/new/arm.v" Line 1. Module arm doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/nayel/Desktop/arch/multicycle/multicycle.srcs/sources_1/new/controller.v" Line 1. Module controller doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/nayel/Desktop/arch/multicycle/multicycle.srcs/sources_1/new/decode.v" Line 1. Module decode doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/nayel/Desktop/arch/multicycle/multicycle.srcs/sources_1/new/mainfsm.v" Line 1. Module mainfsm doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/nayel/Desktop/arch/multicycle/multicycle.srcs/sources_1/new/condlogic.v" Line 1. Module condlogic doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/nayel/Desktop/arch/multicycle/multicycle.srcs/sources_1/new/flopr.v" Line 1. Module flopr(WIDTH=2) doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/nayel/Desktop/arch/multicycle/multicycle.srcs/sources_1/new/condcheck.v" Line 1. Module condcheck doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/nayel/Desktop/arch/multicycle/multicycle.srcs/sources_1/new/flopr.v" Line 1. Module flopr(WIDTH=1) doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/nayel/Desktop/arch/multicycle/multicycle.srcs/sources_1/new/flopenr.v" Line 1. Module flopenr(WIDTH=2) doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/nayel/Desktop/arch/multicycle/multicycle.srcs/sources_1/new/flopenr.v" Line 1. Module flopenr(WIDTH=2) doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/nayel/Desktop/arch/multicycle/multicycle.srcs/sources_1/new/datapath.v" Line 1. Module datapath doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/nayel/Desktop/arch/multicycle/multicycle.srcs/sources_1/new/flopenr.v" Line 1. Module flopenr(WIDTH=32) doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/nayel/Desktop/arch/multicycle/multicycle.srcs/sources_1/new/mux2.v" Line 1. Module mux2(WIDTH=32) doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/nayel/Desktop/arch/multicycle/multicycle.srcs/sources_1/new/flopenr.v" Line 1. Module flopenr(WIDTH=32) doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/nayel/Desktop/arch/multicycle/multicycle.srcs/sources_1/new/flopr.v" Line 1. Module flopr(WIDTH=32) doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/nayel/Desktop/arch/multicycle/multicycle.srcs/sources_1/new/mux2.v" Line 1. Module mux2(WIDTH=4) doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/nayel/Desktop/arch/multicycle/multicycle.srcs/sources_1/new/mux2.v" Line 1. Module mux2(WIDTH=4) doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/nayel/Desktop/arch/multicycle/multicycle.srcs/sources_1/new/mux2.v" Line 1. Module mux2(WIDTH=4) doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/nayel/Desktop/arch/multicycle/multicycle.srcs/sources_1/new/mux2.v" Line 1. Module mux2(WIDTH=4) doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/nayel/Desktop/arch/multicycle/multicycle.srcs/sources_1/new/mux2.v" Line 1. Module mux2(WIDTH=4) doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/nayel/Desktop/arch/multicycle/multicycle.srcs/sources_1/new/extend.v" Line 1. Module extend doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/nayel/Desktop/arch/multicycle/multicycle.srcs/sources_1/new/regfile.v" Line 1. Module regfile doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/nayel/Desktop/arch/multicycle/multicycle.srcs/sources_1/new/flopr.v" Line 1. Module flopr(WIDTH=64) doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/nayel/Desktop/arch/multicycle/multicycle.srcs/sources_1/new/mux2.v" Line 1. Module mux2(WIDTH=32) doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/nayel/Desktop/arch/multicycle/multicycle.srcs/sources_1/new/mux3.v" Line 1. Module mux3(WIDTH=32) doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/nayel/Desktop/arch/multicycle/multicycle.srcs/sources_1/new/alu.v" Line 1. Module alu doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/nayel/Desktop/arch/multicycle/multicycle.srcs/sources_1/new/flopr.v" Line 1. Module flopr(WIDTH=32) doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/nayel/Desktop/arch/multicycle/multicycle.srcs/sources_1/new/mux3.v" Line 1. Module mux3(WIDTH=32) doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/nayel/Desktop/arch/multicycle/multicycle.srcs/sources_1/new/mem.v" Line 1. Module mem doesn't have a timescale but at least one module in design has a timescale.
 Completed simulation data flow analysis
 Time Resolution for simulation is 1ps
 Compiling module xil_defaultlib.mainfsm
