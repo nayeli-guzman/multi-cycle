@@ -14,7 +14,8 @@ module controller (
   ALUSrcB,
   ResultSrc,
   ImmSrc,
-  ALUControl
+  ALUControl,
+  IsMul
 );
   input wire clk;
   input wire reset;
@@ -32,6 +33,7 @@ module controller (
   output wire [1:0] ResultSrc;
   output wire [1:0] ImmSrc;
   output wire [2:0] ALUControl;
+  output wire IsMul;
   wire [1:0] FlagW;
   wire PCS;
   wire NextPC;
@@ -57,7 +59,8 @@ module controller (
     .ALUSrcB(ALUSrcB),
     .ImmSrc(ImmSrc),
     .RegSrc(RegSrc),
-    .ALUControl(ALUControl)
+    .ALUControl(ALUControl),
+    .IsMul(IsMul)
   );
   
   condlogic cl(

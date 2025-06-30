@@ -18,7 +18,7 @@ module decode (
   RegSrc,
   ALUControl,
   MUL,
-  isMul
+  IsMul
 );
   input wire clk;
   input wire reset;
@@ -40,7 +40,8 @@ module decode (
   output wire [1:0] ImmSrc;
   output wire [1:0] RegSrc;
   output reg [2:0] ALUControl;
-  output wire []
+  output wire IsMul;
+  
   wire Branch;
   wire ALUOp;
 
@@ -60,11 +61,13 @@ module decode (
     .Branch(Branch),
     .ALUOp(ALUOp)
   );
+  
+  assign IsMul = MUL == 4'b1001 ? 1:0;
 
   // op ALU
   always @(*) begin
     if (ALUOp) begin
-      if (MUL == 4'b1001)
+      if (IsMul)
         ALUControl = 3'b101;
       else
         case (Funct[4:1])

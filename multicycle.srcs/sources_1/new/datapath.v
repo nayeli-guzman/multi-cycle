@@ -16,7 +16,8 @@ module datapath (
   ALUSrcB,
   ResultSrc,
   ImmSrc,
-  ALUControl
+  ALUControl,
+  IsMul
 );
   input wire clk;
   input wire reset;
@@ -36,6 +37,8 @@ module datapath (
   input wire [1:0] ResultSrc;
   input wire [1:0] ImmSrc;
   input wire [2:0] ALUControl;
+  input wire IsMul;
+  
   wire [31:0] PCNext;
   wire [31:0] PC;
   wire [31:0] ExtImm;
@@ -56,10 +59,7 @@ module datapath (
   wire [3:0] RA1_;
   wire [3:0] RA2_;
   
-  
-  assign RA2_ = (Instr[7:4] == 4'b1001) ? Instr[11:8]  : Instr[3:0];
-  assign RA1_ = (Instr[7:4] == 4'b1001) ? Instr[3:0]   : Instr[19:16];
-  assign A3   = (Instr[7:4] == 4'b1001) ? Instr[19:16] : Instr[15:12];
+    // se agregaron 3 mux para llamar a los valores correctos en caso se auna multiplicacion Rd, Rn, y Rm 
   
 
   flopenr #(32) pcreg(
@@ -91,19 +91,42 @@ module datapath (
     .d(ReadData),
     .q(Data)
   );
+  
+  // AQUI
 
   mux2 #(4) ra1mux(
-    .d0(RA1_),
+    .d0(Instr[19:16]),
     .d1(4'd15),
     .s(RegSrc[0]),
+    .y(RA1_)
+  );
+  
+  mux2 #(4) ra12mux(
+    .d0(RA1_),
+    .d1(Instr[3:0]),
+    .s(IsMul),
     .y(RA1)
   );
 
   mux2 #(4) ra2mux(
-    .d0(RA2_),
+    .d0(Instr[3:0]),
     .d1(Instr[15:12]),
     .s(RegSrc[1]),
+    .y(RA2_)
+  );
+  
+  mux2 #(4) ra22mux(
+    .d0(RA2_),
+    .d1(Instr[11:8]),
+    .s(IsMul),
     .y(RA2)
+  );
+  
+  mux2 #(4) ra3mux(
+    .d0(Instr[15:12]),
+    .d1(Instr[19:16]),
+    .s(IsMul),
+    .y(A3)
   );
 
   extend e(
