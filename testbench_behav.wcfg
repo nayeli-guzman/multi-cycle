@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="0.000 ns"></ZoomStartTime>
-      <ZoomEndTime time="164.401 ns"></ZoomEndTime>
-      <Cursor1Time time="137.600 ns"></Cursor1Time>
+      <ZoomStartTime time="3.100 ns"></ZoomStartTime>
+      <ZoomEndTime time="492.601 ns"></ZoomEndTime>
+      <Cursor1Time time="40.000 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="143"></NameColumnWidth>
-      <ValueColumnWidth column_width="72"></ValueColumnWidth>
+      <NameColumnWidth column_width="144"></NameColumnWidth>
+      <ValueColumnWidth column_width="76"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="20" />
+   <WVObjectSize size="5" />
    <wvobject fp_name="/testbench/clk" type="logic">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
@@ -39,67 +39,6 @@
    <wvobject fp_name="/testbench/dut/arm/dp/rf/rf" type="array">
       <obj_property name="ElementShortName">rf[14:0][31:0]</obj_property>
       <obj_property name="ObjectShortName">rf[14:0][31:0]</obj_property>
-      <obj_property name="isExpanded"></obj_property>
-   </wvobject>
-   <wvobject fp_name="/testbench/dut/arm/dp/Adr" type="array">
-      <obj_property name="ElementShortName">Adr[31:0]</obj_property>
-      <obj_property name="ObjectShortName">Adr[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/testbench/dut/arm/dp/RA1" type="array">
-      <obj_property name="ElementShortName">RA1[3:0]</obj_property>
-      <obj_property name="ObjectShortName">RA1[3:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/testbench/dut/arm/dp/RA2" type="array">
-      <obj_property name="ElementShortName">RA2[3:0]</obj_property>
-      <obj_property name="ObjectShortName">RA2[3:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/testbench/dut/arm/dp/rf/rd1" type="array">
-      <obj_property name="ElementShortName">rd1[31:0]</obj_property>
-      <obj_property name="ObjectShortName">rd1[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/testbench/dut/arm/dp/rf/rd2" type="array">
-      <obj_property name="ElementShortName">rd2[31:0]</obj_property>
-      <obj_property name="ObjectShortName">rd2[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/testbench/dut/arm/dp/SrcA" type="array">
-      <obj_property name="ElementShortName">SrcA[31:0]</obj_property>
-      <obj_property name="ObjectShortName">SrcA[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/testbench/dut/arm/dp/SrcB" type="array">
-      <obj_property name="ElementShortName">SrcB[31:0]</obj_property>
-      <obj_property name="ObjectShortName">SrcB[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/testbench/dut/arm/dp/Result" type="array">
-      <obj_property name="ElementShortName">Result[31:0]</obj_property>
-      <obj_property name="ObjectShortName">Result[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/testbench/dut/arm/dp/ALUResult" type="array">
-      <obj_property name="ElementShortName">ALUResult[31:0]</obj_property>
-      <obj_property name="ObjectShortName">ALUResult[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/testbench/dut/arm/dp/rf/rf" type="array">
-      <obj_property name="ElementShortName">rf[14:0][31:0]</obj_property>
-      <obj_property name="ObjectShortName">rf[14:0][31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/testbench/dut/arm/dp/PCWrite" type="logic">
-      <obj_property name="ElementShortName">PCWrite</obj_property>
-      <obj_property name="ObjectShortName">PCWrite</obj_property>
-   </wvobject>
-   <wvobject fp_name="/testbench/dut/arm/dp/IRWrite" type="logic">
-      <obj_property name="ElementShortName">IRWrite</obj_property>
-      <obj_property name="ObjectShortName">IRWrite</obj_property>
-   </wvobject>
-   <wvobject fp_name="/testbench/dut/arm/dp/PC" type="array">
-      <obj_property name="ElementShortName">PC[31:0]</obj_property>
-      <obj_property name="ObjectShortName">PC[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/testbench/dut/arm/dp/PCNext" type="array">
-      <obj_property name="ElementShortName">PCNext[31:0]</obj_property>
-      <obj_property name="ObjectShortName">PCNext[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/testbench/dut/mem/RAM" type="array">
-      <obj_property name="ElementShortName">RAM[63:0][31:0]</obj_property>
-      <obj_property name="ObjectShortName">RAM[63:0][31:0]</obj_property>
       <obj_property name="isExpanded"></obj_property>
    </wvobject>
 </wave_config>
