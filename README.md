@@ -87,3 +87,6 @@ This project extends a multicycle ARM-based processor with:
 ## 📝 Notes
 
 - Simulations and synthesis done with **Vivado**.
+
+processor
+![hola](https://media1.tenor.com/m/91vZCS2q-ZwAAAAd/among-us.gif)
