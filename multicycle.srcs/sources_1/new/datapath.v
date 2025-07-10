@@ -180,7 +180,8 @@ module datapath (
     .ALUControl(ALUControl),
     .Result(ALUResult),
     .ALUFlags(ALUFlags),
-    .ALUMulti(ALUMulti)
+    .ALUMulti(ALUMulti),
+    .IsMul(IsMul)
   );
 
   flopr #(32) alureg(
