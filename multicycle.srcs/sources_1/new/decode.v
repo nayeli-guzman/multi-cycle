@@ -40,7 +40,7 @@ module decode (
   output wire [1:0] ALUSrcB;
   output wire [1:0] ImmSrc;
   output wire [1:0] RegSrc;
-  output reg [2:0] ALUControl;
+  output reg [3:0] ALUControl;
   output wire IsMul;
   
   wire Branch;
@@ -71,26 +71,27 @@ module decode (
     if (ALUOp) begin
       if (IsMul)
         case(Instr[23:21])
-            3'b000: ALUControl = 3'b101;
-            3'b100: ALUControl = 3'b110; // umul
-            3'b110: ALUControl = 3'b111; // smul
+            3'b000: ALUControl = 4'b0101;
+            3'b100: ALUControl = 4'b0110; // umul
+            3'b110: ALUControl = 4'b0111; // smul
         endcase
       else
         case (Funct[4:1])
-          4'b0100: ALUControl = 3'b000; // +
-          4'b0010: ALUControl = 3'b001; // -
-          4'b0000: ALUControl = 3'b010; // &
-          4'b1100: ALUControl = 3'b011; // | LSL
-          4'b0001: ALUControl = 3'b100; // SHIFT
-          4'b1101: ALUControl = 3'b100; // mov
-          4'b1010: ALUControl = 3'b001; // CMP
-          default: ALUControl = 3'bxxx;
+          4'b0100: ALUControl = 4'b0000; // +
+          4'b0010: ALUControl = 4'b0001; // -
+          4'b0000: ALUControl = 4'b0010; // &
+          4'b1100: ALUControl = 4'b0011; // | LSL
+          4'b1101: ALUControl = 4'b0100; // mov
+          4'b1010: ALUControl = 4'b0001; // CMP
+          4'b1111: ALUControl = 4'b1000; // Fadd
+          4'b1000: ALUControl = 4'b1100; // Fmull
+          default: ALUControl = 4'bxxxx;
         endcase
       NoWrite = Funct[4:1] == 4'b1010;
       FlagW[1] = Funct[0];
-      FlagW[0] = Funct[0] & (ALUControl == 3'b00?);
+      FlagW[0] = Funct[0] & (ALUControl == 4'b000?);
     end else begin
-      ALUControl = 3'b000;
+      ALUControl = 4'b0000;
       FlagW = 2'b00;
     end
   end
