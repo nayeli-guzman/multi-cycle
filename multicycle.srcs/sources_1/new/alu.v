@@ -22,8 +22,9 @@ always @(*) begin
   casex (ALUControl)
     3'b00?: Result = sum;
     3'b010: Result = a & b;
-    3'b011: Result = a | b;
-    3'b100: Result = a << b;
+    3'b011: Result = a << b;
+    //3'b100: Result = a << b;
+    3'b100: Result = b;
     3'b101: Result = a * b;
     3'b110: begin  // UMUL
         multiplication = $unsigned(a) * $unsigned(b);

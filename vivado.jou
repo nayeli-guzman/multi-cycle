@@ -1,14 +1,33 @@
 #-----------------------------------------------------------
-# Vivado v2023.2 (64-bit)
-# SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
-# IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
-# SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
-# Start of session at: Mon Jun 30 13:30:26 2025
-# Process ID: 22536
-# Current directory: C:/Users/renat/Vivado_projects/multi-cycle
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent12360 C:\Users\renat\Vivado_projects\multi-cycle\multicycle.xpr
-# Log file: C:/Users/renat/Vivado_projects/multi-cycle/vivado.log
-# Journal file: C:/Users/renat/Vivado_projects/multi-cycle\vivado.jou
-# Running On: Jake, OS: Windows, CPU Frequency: 2918 MHz, CPU Physical cores: 14, Host memory: 34014 MB
-#-----------------------------------------------------------
-start_gui
+# Vivado v2024.2 (64-bit)
+# SW Build 5239630 on Fri Nov 08 22:35:27 MST 2024
+# IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
+# SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
+# Start of session at: Fri Jul 11 19:57:28 2025
+# Process ID         : 23488
+# Current directory  : C:/Users/nayel/Desktop/arch/multi-cycle
+# Command line       : vivado.exe -gui_launcher_event rodinguilauncherevent15648 C:\Users\nayel\Desktop\arch\multi-cycle\multicycle.xpr
+# Log file           : C:/Users/nayel/Desktop/arch/multi-cycle/vivado.log
+# Journal file       : C:/Users/nayel/Desktop/arch/multi-cycle\vivado.jou
+# Running On         : computer
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26100
+# Processor Detail   : 11th Gen Intel(R) Core(TM) i7-1165G7 @ 2.80GHz
+# CPU Frequency      : 1690 MHz
+# CPU Physical cores : 4
+# CPU Logical cores  : 8
+# Host memory        : 8311 MB
+# Swap memory        : 16106 MB
+# Total Virtual      : 24417 MB
+# Available Virtual  : 3849 MB
+#-----------------------------------------------------------start_gui
+open_project C:/Users/nayel/Desktop/arch/multi-cycle/multicycle.xpr
+update_compile_order -fileset sources_1
+
+launch_simulation
+open_wave_config C:/Users/nayel/Desktop/arch/multi-cycle/testbench_behav.wcfg
+source testbench.tcl
+close_sim
+launch_simulation
+open_wave_config C:/Users/nayel/Desktop/arch/multi-cycle/testbench_behav.wcfg
+source testbench.tcl

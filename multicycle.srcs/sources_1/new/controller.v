@@ -40,6 +40,8 @@ module controller (
   wire RegW;
   wire MemW;
   
+  wire NoWrite;
+  
   decode dec(
     .clk(clk),
     .reset(reset),
@@ -60,7 +62,8 @@ module controller (
     .ImmSrc(ImmSrc),
     .RegSrc(RegSrc),
     .ALUControl(ALUControl),
-    .IsMul(IsMul)
+    .IsMul(IsMul),
+    .NoWrite(NoWrite)
   );
   
   condlogic cl(
@@ -76,6 +79,7 @@ module controller (
     .PCWrite(PCWrite),
     .RegWrite(RegWrite),
     .MemWrite(MemWrite),
-    .FPUWrite(FPUWrite)
+    .FPUWrite(FPUWrite),
+    .NoWrite(NoWrite)
   );
 endmodule

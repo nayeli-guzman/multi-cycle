@@ -18,7 +18,8 @@ module decode (
   RegSrc,
   ALUControl,
   Instr,
-  IsMul
+  IsMul,
+  NoWrite
 );
   input wire clk;
   input wire reset;
@@ -44,6 +45,7 @@ module decode (
   
   wire Branch;
   wire ALUOp;
+  output reg NoWrite;
 
   mainfsm fsm(
     .clk(clk),
@@ -78,10 +80,13 @@ module decode (
           4'b0100: ALUControl = 3'b000; // +
           4'b0010: ALUControl = 3'b001; // -
           4'b0000: ALUControl = 3'b010; // &
-          4'b1100: ALUControl = 3'b011; // |
+          4'b1100: ALUControl = 3'b011; // | LSL
           4'b0001: ALUControl = 3'b100; // SHIFT
+          4'b1101: ALUControl = 3'b100; // mov
+          4'b1010: ALUControl = 3'b001; // CMP
           default: ALUControl = 3'bxxx;
         endcase
+      NoWrite = Funct[4:1] == 4'b1010;
       FlagW[1] = Funct[0];
       FlagW[0] = Funct[0] & (ALUControl == 3'b00?);
     end else begin
