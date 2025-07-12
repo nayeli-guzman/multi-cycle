@@ -85,6 +85,7 @@ module decode (
           4'b1010: ALUControl = 4'b0001; // CMP
           4'b1111: ALUControl = 4'b1000; // Fadd
           4'b1000: ALUControl = 4'b1100; // Fmull
+          4'b0110: ALUControl = 4'b1001; // Fmull
           default: ALUControl = 4'bxxxx;
         endcase
       NoWrite = Funct[4:1] == 4'b1010;

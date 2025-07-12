@@ -39,6 +39,7 @@ always @(*) begin
         4'b0011: Result = a << b;
         4'b0100: Result = b;  
         4'b0101: Result = a * b;
+        4'b1001: Result = a / b;
         4'b0110: begin  // UMUL
                     multiplication = $unsigned(a) * $unsigned(b);
                     ALUMulti = multiplication[31:0];
