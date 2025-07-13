@@ -19,13 +19,13 @@ reg[63:0] multiplication;
 reg carr;
 wire [31:0] fadd, fmul;
 
-fadd_32 fa (
+fadd_16 fa (
   .A(a),
   .B(b),
   .result(fadd)
 );
 
-fmul_32 fm (
+fmul_16 fm (
   .A(a),
   .B(b),
   .result(fmul)
