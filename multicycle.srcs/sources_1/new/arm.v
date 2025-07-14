@@ -6,7 +6,8 @@ module arm (
   MemWrite,
   Adr,
   WriteData,
-  ReadData
+  ReadData,
+  RegMonitored
 );
   input wire clk;
   input wire reset;
@@ -14,6 +15,7 @@ module arm (
   output wire [31:0] Adr;
   output wire [31:0] WriteData;
   input wire [31:0] ReadData;
+  output wire [31:0] RegMonitored;
   wire [31:0] Instr;
   wire [3:0] ALUFlags;
   wire PCWrite;
@@ -70,6 +72,7 @@ module arm (
     .ImmSrc(ImmSrc),
     .ALUControl(ALUControl),
     .IsMul(IsMul),
-    .isFP(isFP)
+    .isFP(isFP),
+    .RegMonitored(RegMonitored)
   );
 endmodule
