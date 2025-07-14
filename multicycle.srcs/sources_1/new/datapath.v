@@ -18,7 +18,8 @@ module datapath (
   ImmSrc,
   ALUControl,
   IsMul,
-  isFP
+  isFP,
+  RegMonitored
 );
   input wire clk;
   input wire reset;
@@ -40,6 +41,7 @@ module datapath (
   input wire [3:0] ALUControl;
   input wire IsMul;
   input wire isFP;
+  output wire [31:0] RegMonitored;
   
   wire [31:0] PCNext;
   wire [31:0] PC;
@@ -155,7 +157,8 @@ module datapath (
     .a4(Instr[15:12]),
     .wd4(ALUMulti),
     .IsMul(IsMul),
-    .Instr(Instr[23:21])
+    .Instr(Instr[23:21]),
+    .reg1(RegMonitored)
   );
 
   flopr #(64) rdreg(
