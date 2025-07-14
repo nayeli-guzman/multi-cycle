@@ -5,13 +5,15 @@ module top (
   reset,
   WriteData,
   Adr,
-  MemWrite
+  MemWrite,
+  RegMonitored
 );
   input wire clk;
   input wire reset;
   output wire [31:0] WriteData;
   output wire [31:0] Adr;
   output wire MemWrite;
+  output wire [31:0] RegMonitored;
   wire [31:0] ReadData;
   
   arm arm(
@@ -20,7 +22,8 @@ module top (
     .MemWrite(MemWrite),
     .Adr(Adr),
     .WriteData(WriteData),
-    .ReadData(ReadData)
+    .ReadData(ReadData),
+    .RegMonitored(RegMonitored)
   );
   
   mem mem(
