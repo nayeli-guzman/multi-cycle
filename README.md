@@ -82,8 +82,10 @@ This project extends a multicycle ARM-based processor with:
 - ✅ Assembly programs demonstrating usage of new operations.
 - ✅ Testbenches for ALU and FPU.
 - ✅ Written report (`report/report.pdf`).
+- ✅ FPGA Basys3 implementation (in separate branch of this repo).
 ---
 
 ## 📝 Notes
 
 - Simulations and synthesis done with **Vivado**.
+- Separate branch "FPGA Implementation" for display in FPGA Basys3
