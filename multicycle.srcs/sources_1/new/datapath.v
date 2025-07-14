@@ -17,7 +17,8 @@ module datapath (
   ResultSrc,
   ImmSrc,
   ALUControl,
-  IsMul
+  IsMul,
+  isFP
 );
   input wire clk;
   input wire reset;
@@ -38,6 +39,7 @@ module datapath (
   input wire [1:0] ImmSrc;
   input wire [3:0] ALUControl;
   input wire IsMul;
+  input wire isFP;
   
   wire [31:0] PCNext;
   wire [31:0] PC;
@@ -51,6 +53,10 @@ module datapath (
   wire [31:0] A;
   wire [31:0] ALUResult;
   wire [31:0] ALUMulti;
+  
+  wire [31:0] Result1;
+  wire [31:0] Result2;
+  
   
   wire [31:0] ALUOut;
   wire [3:0] RA1;
@@ -178,10 +184,24 @@ module datapath (
     .a(SrcA),
     .b(SrcB),
     .ALUControl(ALUControl),
-    .Result(ALUResult),
+    .Result(Result1),
     .ALUFlags(ALUFlags),
     .ALUMulti(ALUMulti),
     .IsMul(IsMul)
+  );
+  
+  fpu f(
+    .a(SrcA),
+    .b(SrcB),
+    .ALUControl(ALUControl),
+    .Result(Result2)
+  );
+  
+  mux2 #(32) res(
+    .d0(Result1),
+    .d1(Result2),
+    .s(isFP),
+    .y(ALUResult)
   );
 
   flopr #(32) alureg(

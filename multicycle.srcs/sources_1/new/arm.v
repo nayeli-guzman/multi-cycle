@@ -28,6 +28,7 @@ module arm (
   wire [3:0] ALUControl;
   wire [1:0] ResultSrc;
   wire IsMul;
+  wire isFP;
   
   controller c(
     .clk(clk),
@@ -46,7 +47,8 @@ module arm (
     .ResultSrc(ResultSrc),
     .ImmSrc(ImmSrc),
     .ALUControl(ALUControl),
-    .IsMul(IsMul)
+    .IsMul(IsMul),
+    .isFP(isFP)
   );
   datapath dp(
     .clk(clk),
@@ -67,6 +69,7 @@ module arm (
     .ResultSrc(ResultSrc),
     .ImmSrc(ImmSrc),
     .ALUControl(ALUControl),
-    .IsMul(IsMul)
+    .IsMul(IsMul),
+    .isFP(isFP)
   );
 endmodule

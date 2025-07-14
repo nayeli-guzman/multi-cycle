@@ -19,7 +19,8 @@ module decode (
   ALUControl,
   Instr,
   IsMul,
-  NoWrite
+  NoWrite,
+  isFP
 );
   input wire clk;
   input wire reset;
@@ -42,6 +43,7 @@ module decode (
   output wire [1:0] RegSrc;
   output reg [3:0] ALUControl;
   output wire IsMul;
+  output reg isFP;
   
   wire Branch;
   wire ALUOp;
@@ -83,17 +85,20 @@ module decode (
           4'b1100: ALUControl = 4'b0011; // | LSL
           4'b1101: ALUControl = 4'b0100; // mov
           4'b1010: ALUControl = 4'b0001; // CMP
-          4'b1111: ALUControl = 4'b1000; // Fadd
+          4'b1111: ALUControl = 4'b1101; // Fadd
           4'b1000: ALUControl = 4'b1100; // Fmull
-          4'b0110: ALUControl = 4'b1001; // Fmull
+          4'b0110: ALUControl = 4'b1001; // div
           default: ALUControl = 4'bxxxx;
         endcase
+        
       NoWrite = Funct[4:1] == 4'b1010;
       FlagW[1] = Funct[0];
       FlagW[0] = Funct[0] & (ALUControl == 4'b000?);
+      isFP = ALUControl[3:2] == 2'b11; // es floating point
     end else begin
       ALUControl = 4'b0000;
       FlagW = 2'b00;
+      isFP = 0;
     end
   end
 

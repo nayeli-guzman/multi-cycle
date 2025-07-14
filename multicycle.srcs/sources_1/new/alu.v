@@ -19,17 +19,7 @@ reg[63:0] multiplication;
 reg carr;
 wire [31:0] fadd, fmul;
 
-fadd_16 fa (
-  .A(a),
-  .B(b),
-  .result(fadd)
-);
 
-fmul_16 fm (
-  .A(a),
-  .B(b),
-  .result(fmul)
-);
 
 always @(*) begin
     
@@ -52,8 +42,7 @@ always @(*) begin
                     Result = multiplication[63:32];
                     carr = (multiplication[63:32] != {32{multiplication[31]}}); 
                 end
-        4'b1000: Result = fadd; // fadd
-        4'b1100: Result = fmul; // fmull      
+   
     endcase
 end
 
